@@ -28,15 +28,15 @@ resource "azurerm_sql_database" "db1" {
   requested_service_objective_name = "S0"
   max_size_bytes                   = "1073741824"
 
-  import {
-    storage_uri                  = "${var.blob_uri}"
-    storage_key                  = "${var.blob_password}"
-    storage_key_type             = "StorageAccessKey"
-    administrator_login          = "${var.db_username}"
-    administrator_login_password = "${var.db_password}"
-    authentication_type          = "SQL"
-    operation_mode               = "Import"
-  }
+  # import {
+  #   storage_uri                  = "${var.blob_uri}"
+  #   storage_key                  = "${var.blob_password}"
+  #   storage_key_type             = "StorageAccessKey"
+  #   administrator_login          = "${var.db_username}"
+  #   administrator_login_password = "${var.db_password}"
+  #   authentication_type          = "SQL"
+  #   operation_mode               = "Import"
+  # }
 }
 
 resource "azurerm_sql_firewall_rule" "fwrule1" {
